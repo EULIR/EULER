@@ -1,6 +1,6 @@
 import java.math.*;
 
-public class project16
+public class Project16
 {
 	public static void main(String[] args)
 	{

@@ -1,5 +1,4 @@
-import java.util.Arrays;
-public class project15
+public class Project15
 {
 	public static void main(String[] args)
 	{

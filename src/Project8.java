@@ -1,4 +1,4 @@
-public class project8
+public class Project8
 {
 	public static void main(String[] args)
 	{

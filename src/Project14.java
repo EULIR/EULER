@@ -1,4 +1,4 @@
-public class project14
+public class Project14
 {
 	private static int make(int n, int k)
 	{

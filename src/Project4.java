@@ -1,4 +1,4 @@
-public class project4
+public class Project4
 {
 	public static boolean judge(int t)
 	{
