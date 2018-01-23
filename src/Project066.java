@@ -2,42 +2,20 @@ import java.math.BigInteger;
 
 public class Project066
 {
-	private static String sqrt(String num)
-	{
-		String sqrt = "0";
-		String pre = "0";
-		BigInteger trynum;
-		BigInteger flag;
-		BigInteger _20 = new BigInteger("20");
-		BigInteger dividend;
-		BigInteger A;
-		BigInteger B;
-		BigInteger BB;
-		if (num.length() % 2 == 1)
-			num = "0" + num;
-		for (int i = 0; i < num.length() / 2; ++i)
-		{
-			dividend = new BigInteger(pre + num.substring(2 * i, 2 * i + 2));
-			A = new BigInteger(sqrt);
-			for (int j = 0; j <= 9; ++j)
-			{
-				B = new BigInteger(j + "");
-				BB = new BigInteger((j + 1) + "");
-				trynum = _20.multiply(A).multiply(B).add(B.pow(2));
-				flag = _20.multiply(A).multiply(BB).add(BB.pow(2));
-				if (trynum.subtract(dividend).compareTo(BigInteger.ZERO) <= 0 && flag.subtract(dividend).compareTo(BigInteger.ZERO) > 0)
-				{
-					sqrt += j;
-					pre = dividend.subtract(trynum).toString();
-					break;
-				}
-			}
+	public static BigInteger sqrt(BigInteger x) {
+		if (x.signum() == -1)
+			throw new IllegalArgumentException("Square root of negative number");
+		BigInteger y = BigInteger.ZERO;
+		for (int i = (x.bitLength() - 1) / 2; i >= 0; i--) {
+			y = y.setBit(i);
+			if (y.multiply(y).compareTo(x) > 0)
+				y = y.clearBit(i);
 		}
-		return sqrt.substring(1);
+		return y;
 	}
 	private static boolean isSquare(BigInteger a)
 	{
-		BigInteger b = new BigInteger(sqrt(String.valueOf(a)));
+		BigInteger b = sqrt(a);
 		return b.pow(2).equals(a);
 	}
 
@@ -52,7 +30,7 @@ public class Project066
 			x1 = y.multiply(y).multiply(BigInteger.valueOf(D));
 			x1 = x1.add(BigInteger.ONE);
 		}
-		return new BigInteger(sqrt(String.valueOf(x1)));
+		return sqrt(x1);
 	}
 
 	private static boolean isSquare(int a)
