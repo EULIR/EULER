@@ -2,17 +2,20 @@ import java.math.BigInteger;
 
 public class Project066
 {
-	public static BigInteger sqrt(BigInteger x) {
+	public static BigInteger sqrt(BigInteger x)
+	{
 		if (x.signum() == -1)
 			throw new IllegalArgumentException("Square root of negative number");
 		BigInteger y = BigInteger.ZERO;
-		for (int i = (x.bitLength() - 1) / 2; i >= 0; i--) {
+		for (int i = (x.bitLength() - 1) / 2; i >= 0; i--)
+		{
 			y = y.setBit(i);
 			if (y.multiply(y).compareTo(x) > 0)
 				y = y.clearBit(i);
 		}
 		return y;
 	}
+
 	private static boolean isSquare(BigInteger a)
 	{
 		BigInteger b = sqrt(a);
@@ -54,7 +57,7 @@ public class Project066
 			if (x.compareTo(max) > 0)
 			{
 				max = x;
-			    index = D;
+				index = D;
 			}
 		}//*/
 		//System.out.println(findTheMaxX(5));
