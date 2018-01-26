@@ -62,12 +62,7 @@ public class Library
 
 	public static String reverse(String str)
 	{
-		if (str == null || str.length() == 0)
-			return str;
-		StringBuilder sb = new StringBuilder();
-		for (int i = str.length() - 1; i >= 0; i--)
-			sb.append(str.charAt(i));
-		return sb.toString();
+		return new StringBuilder(str).reverse().toString();
 	}
 
 	public static boolean isReverse(String str)
