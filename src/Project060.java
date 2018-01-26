@@ -2,30 +2,18 @@ import java.util.ArrayList;
 
 public class Project060
 {
-	private static boolean isPrime(int n)
-	{
-		if (n <= 1)
-			return false;
-		if (n == 2)
-			return true;
-		for (int i = 2; i <= Math.sqrt(n) + 1; i++)
-			if (n % i == 0)
-				return false;
-		return true;
-	}
-
 	private static boolean connect(int n, int m)
 	{
 		String s1 = String.valueOf(n) + String.valueOf(m);
 		String s2 = String.valueOf(m) + String.valueOf(n);
-		return isPrime(Integer.parseInt(s1)) && isPrime(Integer.parseInt(s2));
+		return Library.isPrime(Integer.parseInt(s1)) && Library.isPrime(Integer.parseInt(s2));
 	}
 
 	public static void main(String[] args)
 	{
 		ArrayList<Integer> prime = new ArrayList<>();
 		for (int i = 2; i < 10000; i++)
-			if (isPrime(i))
+			if (Library.isPrime(i))
 				prime.add(i);
 		for (int i = 0; i < prime.size(); i++)
 			for (int j = i + 1; j < prime.size(); j++)

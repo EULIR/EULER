@@ -6,7 +6,7 @@ public class Project025
 	{
 		BigInteger first = new BigInteger("1");
 		BigInteger second = new BigInteger("1");
-		BigInteger third = new BigInteger("0");
+		BigInteger third;
 		int k = 2;
 		while (true)
 		{

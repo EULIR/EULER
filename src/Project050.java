@@ -3,23 +3,11 @@ import java.util.List;
 
 public class Project050
 {
-	private static boolean isPrime(int n)
-	{
-		if (n <= 1)
-			return false;
-		if (n == 2)
-			return true;
-		for (int i = 2; i <= Math.sqrt(n) + 1; i++)
-			if (n % i == 0)
-				return false;
-		return true;
-	}
-
 	public static void main(String[] args)
 	{
 		List<Integer> primeNumber = new ArrayList<Integer>();
 		for (int i = 2; i < 1000000; i++)
-			if (isPrime(i))
+			if (Library.isPrime(i))
 				primeNumber.add(i);
 		List<Integer> cum = new ArrayList<Integer>();
 		int sum = 0;

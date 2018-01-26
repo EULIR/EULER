@@ -2,13 +2,6 @@ import java.util.Scanner;
 
 public class Project018
 {
-	public static int max(int a, int b)
-	{
-		if (a > b)
-			return a;
-		else return b;
-	}
-
 	public static void main(String[] args)
 	{
 		int n = 15;
@@ -22,7 +15,7 @@ public class Project018
 			a[n][i] = arr[n][i];
 		for (int i = n - 1; i >= 1; i--)
 			for (int j = 1; j <= i; j++)
-				a[i][j] = arr[i][j] + max(a[i + 1][j], a[i + 1][j + 1]);
+				a[i][j] = arr[i][j] + Library.max(a[i + 1][j], a[i + 1][j + 1]);
 		System.out.println(a[1][1]);
 	}
 }

@@ -2,25 +2,11 @@ import java.util.ArrayList;
 
 public class Project037
 {
-	private static boolean isPrime(int n)
-	{
-		if (n <= 1)
-			return false;
-		if (n == 2)
-			return true;
-		for (int i = 2; i * i <= n; i++)
-			if (n % i == 0)
-				return false;
-		return true;
-	}
-
 	private static boolean judge(ArrayList<String> list)
 	{
 		for (String aList : list)
-		{
-			if (!isPrime(Integer.parseInt(aList)))
+			if (!Library.isPrime(Integer.parseInt(aList)))
 				return false;
-		}
 		return true;
 	}
 
@@ -33,7 +19,7 @@ public class Project037
 		while (k < 11)
 		{
 			n++;
-			if (!isPrime(n))
+			if (!Library.isPrime(n))
 				continue;
 			String s = String.valueOf(n);
 			for (int i = 0; i < s.length(); i++)

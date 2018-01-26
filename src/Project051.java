@@ -3,18 +3,6 @@ import java.util.TreeSet;
 
 public class Project051
 {
-	private static boolean isPrime(int n)
-	{
-		if (n <= 1)
-			return false;
-		if (n == 2)
-			return true;
-		for (int i = 2; i <= Math.sqrt(n) + 1; i++)
-			if (n % i == 0)
-				return false;
-		return true;
-	}
-
 	private static TreeSet<String> sixDigitCombination(int a, int b, int c, String pattern)
 	{
 		TreeSet<String> T = new TreeSet<>();
@@ -34,7 +22,7 @@ public class Project051
 		Iterator<String> it = tree.iterator();
 		int flag = 0;
 		while (it.hasNext())
-			if (isPrime(Integer.parseInt(it.next())))
+			if (Library.isPrime(Integer.parseInt(it.next())))
 				flag++;
 		return flag == 8;
 	}
@@ -46,7 +34,7 @@ public class Project051
 		while (it.hasNext())
 		{
 			int a = Integer.parseInt(it.next());
-			if (isPrime(a))
+			if (Library.isPrime(a))
 				tr.add(a);
 		}
 		return tr;
@@ -55,7 +43,7 @@ public class Project051
 	public static void main(String[] args)
 	{
 		String[] sixDigit = {"bbaaab", "babaab", "baabab", "baaabb", "abbaab", "ababab", "abaabb", "aabbab", "aababb", "aaabbb"};
-		TreeSet<String> sixDigitTree = new TreeSet<>();
+		TreeSet<String> sixDigitTree;
 		for (int i = 0; i < 10; i++)
 			for (int j = 0; j < 10; j++)
 				for (int k = 0; k < 10; k++)

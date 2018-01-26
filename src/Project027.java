@@ -1,18 +1,5 @@
 public class Project027
 {
-	private static boolean isPrime(int n)
-	{
-		boolean boo = true;
-		if (n <= 1)
-			return false;
-		if (n == 2)
-			return true;
-		for (int i = 2; i <= Math.sqrt(n) + 1; i++)
-			if (n % i == 0)
-				boo = false;
-		return boo;
-	}
-
 	public static void main(String[] args)
 	{
 		int max = 0;
@@ -23,7 +10,7 @@ public class Project027
 				int n = 0;
 				for (int i = 0; ; i++)
 				{
-					if (isPrime(i * i + a * i + b))
+					if (Library.isPrime(i * i + a * i + b))
 						n++;
 					else break;
 				}

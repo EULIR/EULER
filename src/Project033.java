@@ -1,12 +1,5 @@
 public class Project033
 {
-	private static int gcd(int a, int b)
-	{
-		if (b == 0)
-			return a;
-		else return gcd(b, a % b);
-	}
-
 	public static void main(String[] args)
 	{
 		int num = 1;
@@ -32,7 +25,7 @@ public class Project033
 					}
 				}
 			}
-		int g = gcd(num, den);
+		int g = Library.gcd(num, den);
 		//System.out.print(num + " " + den);
 		System.out.print(den / g);
 	}

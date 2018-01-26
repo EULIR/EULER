@@ -2,7 +2,7 @@ import java.math.BigInteger;
 
 public class Project066
 {
-	public static BigInteger sqrt(BigInteger x)
+	private static BigInteger sqrt(BigInteger x)
 	{
 		if (x.signum() == -1)
 			throw new IllegalArgumentException("Square root of negative number");

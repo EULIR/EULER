@@ -1,11 +1,5 @@
 public class Project064
 {
-	private static boolean isSquare(int a)
-	{
-		int b = (int) Math.sqrt(a);
-		return b * b == a;
-	}
-
 	public static void main(String[] args)
 	{
 		int ans = 0;
@@ -15,7 +9,7 @@ public class Project064
 			int m = 0;
 			int d = 1;
 			int a = (int) Math.floor(Math.sqrt(i));
-			if (isSquare(i))
+			if (Library.isSquare(i))
 				continue;
 			while (a != 2 * (int) Math.floor(Math.sqrt(i)))
 			{

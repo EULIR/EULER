@@ -1,13 +1,5 @@
 public class Project036
 {
-	private static boolean judge(String s)
-	{
-		for (int i = 0; i < s.length() / 2; i++)
-			if (s.charAt(i) != s.charAt(s.length() - i - 1))
-				return false;
-		return true;
-	}
-
 	private static String change(int a)
 	{
 		StringBuilder s = new StringBuilder();
@@ -26,8 +18,8 @@ public class Project036
 		for (int i = 1; i < 1000000; i++)
 		{
 			String s = String.valueOf(i);
-			if (judge(s))
-				if (judge(change(i)))
+			if (Library.isReverse(s))
+				if (Library.isReverse(change(i)))
 					ans += i;
 		}
 		System.out.print(ans);
