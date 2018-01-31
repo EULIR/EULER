@@ -2,7 +2,7 @@ import java.util.ArrayList;
 
 public class Project074
 {
-	final static int[] fac = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
+	private final static int[] fac = {1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880};
 
 	private static int createNextNumber(int a)
 	{
