@@ -1,5 +1,7 @@
 # Project Euler
 ![img](https://projecteuler.net/images/pe_banner.png)
+![GitHub license](https://img.shields.io/github/license/EULIR/PROJECT-EULER.svg?style=for-the-badge)
+![img](https://img.shields.io/badge/awesome-Project--Euler-red.svg)
 
 ## About Project Euler
 - Project Euler is a series of challenging mathematical/computer programming problems that will require more than just mathematical insights to solve. 
