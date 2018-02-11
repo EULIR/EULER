@@ -9,7 +9,7 @@
 - See more on https://projecteuler.net/about
 
 ## About problem solving
-- All codes are writtln in Java, which require JDK8+ to compile and run.
+- All codes are written in Java, which require JDK8+ to compile and run.
 - I stick to solve at least one problem every day and update them here.
 - Some of the solutions are not efficient enough to get the right answer in a second, therefore, if anybody have any advice or better algorithms, please email me : runmingli_edu@163.com
 
