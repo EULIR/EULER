@@ -1,29 +1,21 @@
 public class Project094
 {
-	private static boolean validTriangle(int a, int b, int c)
+	private static boolean validTriangle(long a, long c)
 	{
-		double p = (double) (a + b + c) / 2;
-		return Library.isSquare((int) (p * (p - a) * (p - b) * (p - c)));
+		return c * c % 4 == 0 && Library.isSquare(a * a - c * c / 4) && c * (long) Math.sqrt(a * a - c * c / 4) % 2 == 0;
 	}
 
 	public static void main(String[] args)
 	{
-		System.out.println(validTriangle(2, 2, 3));
 		long ans = 0;
-		for (int i = 2; i <= (1000000000 + 1) / 3; i++)
+		for (long i = 2; i <= 333333333; i++)
 		{
-			int sideThree = i + 1;
-			if (validTriangle(i, i, sideThree))
-			{
+			long sideThree = i + 1;
+			if (validTriangle(i, sideThree))
 				ans += 3 * i + 1;
-				System.out.println(i);
-			}
 			sideThree = i - 1;
-			if (validTriangle(i, i, sideThree))
-			{
+			if (validTriangle(i, sideThree))
 				ans += 3 * i - 1;
-				System.out.println(i);
-			}
 		}
 		System.out.println(ans);
 	}
