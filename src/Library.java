@@ -131,4 +131,18 @@ public class Library
 		double lnv = Math.log(value);
 		return lnv / lnb;
 	}
+
+	public static int power(int x, int y)
+	{
+		int k = x;
+		int ans = 1;
+		while (y > 0)
+		{
+			if (y % 2 == 1)
+				ans *= k;
+			k *= k;
+			y /= 2;
+		}
+		return ans;
+	}
 }
