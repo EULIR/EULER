@@ -145,4 +145,18 @@ public class Library
 		}
 		return ans;
 	}
+
+	public static long power(long x, long y)
+	{
+		long k = x;
+		long ans = 1;
+		while (y > 0)
+		{
+			if (y % 2 == 1)
+				ans *= k;
+			k *= k;
+			y /= 2;
+		}
+		return ans;
+	}
 }
