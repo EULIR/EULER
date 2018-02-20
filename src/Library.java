@@ -119,6 +119,12 @@ public class Library
 		return b * b == a;
 	}
 
+	public static boolean isSquare(long a)
+	{
+		long b = (long) Math.sqrt(a);
+		return b * b == a;
+	}
+
 	public static double log(double base, double value)
 	{
 		double lnb = Math.log(base);
