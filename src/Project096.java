@@ -8,9 +8,7 @@ public class Project096
 		{
 			String s = str[10 * (a - 1) + i];
 			for (int j = 0; j < s.length(); j++)
-			{
 				arr[i - 1][j] = Integer.parseInt(s.substring(j, j + 1));
-			}
 		}
 		return arr;
 	}
