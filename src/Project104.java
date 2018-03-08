@@ -13,24 +13,39 @@ public class Project104
 
 	public static void main(String[] args)
 	{
-		BigInteger one = BigInteger.ONE;
-		BigInteger two = BigInteger.ONE;
-		BigInteger three;
-		int k = 2;
+		BigInteger a = BigInteger.ONE;
+		BigInteger b = new BigInteger("2");
+		int i = 3;
 		while (true)
 		{
-			three = one.add(two);
-			one = two;
-			two = three;
-			k++;
-			if (k < 541)
-				continue;
-			if (judge(three.toString().substring(0, 9)))
-				if (judge(Library.reverse(three.toString()).substring(0, 9)))
-				{
-					System.out.println(k);
-					break;
-				}
+			a = b;
+			b = a.add(b).mod(new BigInteger("1000000000"));
+			i++;
+			if (judge(b.toString()))
+			{
+
+			}
 		}
 	}
 }
+
+/*
+import math
+f1 = 1
+f2 = 2
+
+i = 3
+while(True):
+    f2,f1 = (f2+f1)%1000000000,(f2)
+    #print "%d  %d" %(f2,f1)
+    i = i+1
+    if( "".join(sorted(str(f2))) == "123456789"):
+        #print i
+        x = (i*math.log10((1+math.sqrt(5))/2)-math.log10(math.sqrt(5)))%1
+
+        y = str (int((10**x)*10000000000))
+        #print y[:9]
+        if("".join(sorted(y[:9])) == "123456789"):
+            print i
+            break
+ */
