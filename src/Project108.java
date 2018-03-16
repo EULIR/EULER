@@ -3,7 +3,7 @@ public class Project108
 	public static void main(String[] args)
 	{
 		long t;
-		long n = t = 2 * 3 * 5 * 7;
+		long n = t = 2 * 3 * 5 * 7 * 11 * 13;
 		while (true)
 		{
 			long n2 = n * n;
