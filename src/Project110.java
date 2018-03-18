@@ -11,10 +11,8 @@ public class Project110
 			BigInteger n2 = n.pow(2);
 			BigInteger count = BigInteger.ZERO;
 			for (BigInteger i = BigInteger.ONE; i.compareTo(n) <= 0; i = i.add(BigInteger.valueOf(1)))
-			{
 				if (n2.mod(i).equals(BigInteger.ZERO))
 					count = count.add(BigInteger.valueOf(1));
-			}
 			if (count.compareTo(new BigInteger("4000000")) >= 0)
 			{
 				System.out.println(n);
