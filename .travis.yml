@@ -1,9 +1,3 @@
-sudo: required
 language: java
 jdk:
 - oraclejdk8
-script:
-- ./gradlew displayCommitHash
-- ./gradlew isCI
-before_install:
-- chmod a+x gradlew
