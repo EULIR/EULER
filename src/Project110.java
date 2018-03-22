@@ -19,7 +19,6 @@ public class Project110
 				break;
 			}
 			n = n.add(t);
-			System.out.println(n);
 		}
 	}
 }
