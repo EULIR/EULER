@@ -12,7 +12,7 @@ public class Project031
 		}
 		if (a[k] > m)
 			return;
-		for (int i = k; i < a.length; i++)
+		for (var i = k; i < a.length; i++)
 			change(m - a[i], i);
 	}
 

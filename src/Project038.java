@@ -5,13 +5,13 @@ public class Project038
 {
 	private static boolean judge(String s)
 	{
-		boolean[] boo = new boolean[10];
+		var boo = new boolean[10];
 		if (s.length() != 9)
 			return false;
 		else
-			for (int i = 0; i < s.length(); i++)
+			for (var i = 0; i < s.length(); i++)
 				boo[Integer.parseInt(String.valueOf(s.charAt(i)))] = true;
-		for (int i = 1; i < 10; i++)
+		for (var i = 1; i < 10; i++)
 			if (!boo[i])
 				return false;
 		return true;
@@ -19,15 +19,15 @@ public class Project038
 
 	public static void main(String[] args)
 	{
-		ArrayList<String> list = new ArrayList<String>();
-		for (int i = 1; i < 10000; i++)
+		var list = new ArrayList<String>();
+		for (var i = 1; i < 10000; i++)
 		{
-			StringBuilder s = new StringBuilder();
-			int n = 0;
+			var s = new StringBuilder();
+			var n = 0;
 			while (s.length() < 9)
 			{
 				n++;
-				int k = n * i;
+				var k = n * i;
 				s.append(k);
 			}
 			if (judge(s.toString()))

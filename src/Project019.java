@@ -16,19 +16,19 @@ public class Project019
 
 	public static void main(String[] args)
 	{
-		int[][] arr = new int[2002][20];
+		var arr = new int[2002][20];
 		arr[1900][1] = 1;
-		for (int i = 1900; i <= 2000; i++)
-			for (int j = 1; j <= 12; j++)
+		for (var i = 1900; i <= 2000; i++)
+			for (var j = 1; j <= 12; j++)
 			{
-				int a = cal(i, j);
+				var a = cal(i, j);
 				if (j == 12)
 					arr[i + 1][1] = (arr[i][j] + a) % 7;
 				else arr[i][j + 1] = (arr[i][j] + a) % 7;
 			}
-		int ans = 0;
-		for (int i = 1901; i <= 2000; i++)
-			for (int j = 1; j <= 12; j++)
+		var ans = 0;
+		for (var i = 1901; i <= 2000; i++)
+			for (var j = 1; j <= 12; j++)
 				//System.out.print(arr[i][j] + " ");
 				if (arr[i][j] == 0)
 					ans++;

@@ -10,7 +10,7 @@ public class Project094
 		long ans = 0;
 		for (long i = 2; i <= 333333333; i++)
 		{
-			long sideThree = i + 1;
+			var sideThree = i + 1;
 			if (validTriangle(i, sideThree))
 				ans += 3 * i + 1;
 			sideThree = i - 1;

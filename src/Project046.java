@@ -2,10 +2,10 @@ public class Project046
 {
 	private static boolean isTure(int a)
 	{
-		for (int i = 2; i < a; i++)
+		for (var i = 2; i < a; i++)
 			if (Library.isPrime(i))
 			{
-				int t = a - i;
+				var t = a - i;
 				t /= 2;
 				if (Library.isSquare(t))
 					return false;
@@ -15,7 +15,7 @@ public class Project046
 
 	public static void main(String[] args)
 	{
-		int n = 1;
+		var n = 1;
 		while (true)
 		{
 			n += 2;

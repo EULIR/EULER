@@ -6,11 +6,11 @@ public class Project050
 	public static void main(String[] args)
 	{
 		List<Integer> primeNumber = new ArrayList<Integer>();
-		for (int i = 2; i < 1000000; i++)
+		for (var i = 2; i < 1000000; i++)
 			if (Library.isPrime(i))
 				primeNumber.add(i);
 		List<Integer> cum = new ArrayList<Integer>();
-		int sum = 0;
+		var sum = 0;
 		for (int num : primeNumber)
 		{
 			sum += num;
@@ -18,12 +18,12 @@ public class Project050
 			if (sum >= 1000000)
 				break;
 		}
-		int prime = 0;
-		int maxChain = 0;
-		for (int i = 0; i < cum.size(); i++)
-			for (int j = i + 1; j < cum.size(); j++)
+		var prime = 0;
+		var maxChain = 0;
+		for (var i = 0; i < cum.size(); i++)
+			for (var j = i + 1; j < cum.size(); j++)
 			{
-				int temp = cum.get(j) - cum.get(i);
+				var temp = cum.get(j) - cum.get(i);
 				if ((j - i + 1) > maxChain)
 					if (primeNumber.contains(temp))
 					{

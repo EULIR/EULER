@@ -2,8 +2,8 @@ public class Project040
 {
 	public static void main(String[] args)
 	{
-		StringBuilder s = new StringBuilder(" ");
-		int n = 0;
+		var s = new StringBuilder(" ");
+		var n = 0;
 		while (s.length() <= 1000000)
 		{
 			n++;

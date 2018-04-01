@@ -5,7 +5,7 @@ public class Project070
 	private static int euler(int n)
 	{
 		int res = n, a = n;
-		for (int i = 2; i * i <= a; i++)
+		for (var i = 2; i * i <= a; i++)
 			if (a % i == 0)
 			{
 				res = res / i * (i - 1);
@@ -19,13 +19,13 @@ public class Project070
 
 	private static boolean judge(int a, int b)
 	{
-		String s1 = String.valueOf(a);
-		String s2 = String.valueOf(b);
-		int[] a1 = new int[7];
-		int[] a2 = new int[7];
-		for (int i = 0; i < s1.length(); i++)
+		var s1 = String.valueOf(a);
+		var s2 = String.valueOf(b);
+		var a1 = new int[7];
+		var a2 = new int[7];
+		for (var i = 0; i < s1.length(); i++)
 			a1[i] = s1.charAt(i);
-		for (int i = 0; i < s2.length(); i++)
+		for (var i = 0; i < s2.length(); i++)
 			a2[i] = s2.charAt(i);
 		Arrays.sort(a1);
 		Arrays.sort(a2);
@@ -34,11 +34,11 @@ public class Project070
 
 	public static void main(String[] args)
 	{
-		int min = 0;
-		int minIndex = 1;
-		for (int i = 2; i < 10000000; i++)
+		var min = 0;
+		var minIndex = 1;
+		for (var i = 2; i < 10000000; i++)
 		{
-			int euler = euler(i);
+			var euler = euler(i);
 			if (judge(euler, i))
 			{
 				if ((long) i * min < (long) minIndex * euler)

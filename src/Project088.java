@@ -10,7 +10,7 @@ public class Project088
 			return s == k;
 		if (k == 1)
 			return p == s;
-		for (int i = 2; i <= p && i <= s - k + 1; i++)
+		for (var i = 2; i <= p && i <= s - k + 1; i++)
 			if (p % i == 0)
 				if (judge(p / i, s - i, k - 1))
 					return true;
@@ -19,11 +19,11 @@ public class Project088
 
 	public static void main(String[] args)
 	{
-		int sum = 0;
+		var sum = 0;
 		ArrayList<Integer> list = new ArrayList<>();
-		for (int i = 2; i <= 12000; i++)
+		for (var i = 2; i <= 12000; i++)
 		{
-			int n = i + 1;
+			var n = i + 1;
 			while (true)
 			{
 				if (judge(n, n, i))

@@ -13,20 +13,20 @@ public class Project083
 
 	public static void main(String[] args)
 	{
-		Scanner s = new Scanner(System.in);
-		int[][] arr = new int[80][80];
-		for (int i = 0; i < 80; i++)
-			for (int j = 0; j < 80; j++)
+		var s = new Scanner(System.in);
+		var arr = new int[80][80];
+		for (var i = 0; i < 80; i++)
+			for (var j = 0; j < 80; j++)
 			{
 				arr[i][j] = s.nextInt();
 				dp[i][j] = Integer.MAX_VALUE / 2;
 			}
 		dp[0][0] = arr[0][0];
-		for (int i = 0; i < 80 * 80; i++)
-			for (int j = 0; j < 80; j++)
-				for (int k = 0; k < 80; k++)
+		for (var i = 0; i < 80 * 80; i++)
+			for (var j = 0; j < 80; j++)
+				for (var k = 0; k < 80; k++)
 				{
-					int t = Library.min(path(k - 1, j), Library.min(path(k + 1, j), Library.min(path(k, j + 1), path(k, j - 1))));
+					var t = Library.min(path(k - 1, j), Library.min(path(k + 1, j), Library.min(path(k, j + 1), path(k, j - 1))));
 					dp[j][k] = Library.min(arr[j][k] + t, dp[j][k]);
 				}
 		System.out.println(dp[79][79]);

@@ -4,22 +4,22 @@ public class Project060
 {
 	private static boolean connect(int n, int m)
 	{
-		String s1 = String.valueOf(n) + String.valueOf(m);
-		String s2 = String.valueOf(m) + String.valueOf(n);
+		var s1 = String.valueOf(n) + String.valueOf(m);
+		var s2 = String.valueOf(m) + String.valueOf(n);
 		return Library.isPrime(Integer.parseInt(s1)) && Library.isPrime(Integer.parseInt(s2));
 	}
 
 	public static void main(String[] args)
 	{
 		ArrayList<Integer> prime = new ArrayList<>();
-		for (int i = 2; i < 10000; i++)
+		for (var i = 2; i < 10000; i++)
 			if (Library.isPrime(i))
 				prime.add(i);
-		for (int i = 0; i < prime.size(); i++)
-			for (int j = i + 1; j < prime.size(); j++)
-				for (int k = j + 1; k < prime.size(); k++)
-					for (int l = k + 1; l < prime.size(); l++)
-						for (int m = l + 1; m < prime.size(); m++)
+		for (var i = 0; i < prime.size(); i++)
+			for (var j = i + 1; j < prime.size(); j++)
+				for (var k = j + 1; k < prime.size(); k++)
+					for (var l = k + 1; l < prime.size(); l++)
+						for (var m = l + 1; m < prime.size(); m++)
 						{
 							int primeOne = prime.get(i);
 							int primeTwo = prime.get(j);

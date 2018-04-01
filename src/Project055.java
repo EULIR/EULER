@@ -4,31 +4,31 @@ public class Project055
 {
 	private static BigInteger newNumber(BigInteger number)
 	{
-		String str1 = number.toString();
-		StringBuilder str2 = new StringBuilder();
-		for (int i = str1.length() - 1; i >= 0; i--)
+		var str1 = number.toString();
+		var str2 = new StringBuilder();
+		for (var i = str1.length() - 1; i >= 0; i--)
 			str2.append(str1.charAt(i));
-		BigInteger num = new BigInteger(str2.toString());
+		var num = new BigInteger(str2.toString());
 		return number.add(num);
 	}
 
 	private static boolean isPalindrome(BigInteger number)
 	{
-		String str1 = number.toString();
-		StringBuilder str2 = new StringBuilder();
-		for (int i = str1.length() - 1; i >= 0; i--)
+		var str1 = number.toString();
+		var str2 = new StringBuilder();
+		for (var i = str1.length() - 1; i >= 0; i--)
 			str2.append(str1.charAt(i));
 		return str1.equals(str2.toString());
 	}
 
 	public static void main(String[] args)
 	{
-		int ans = 0;
-		for (int i = 1; i < 10000; i++)
+		var ans = 0;
+		for (var i = 1; i < 10000; i++)
 		{
-			BigInteger number = new BigInteger(String.valueOf(i));
-			boolean boo = false;
-			int n = 0;
+			var number = new BigInteger(String.valueOf(i));
+			var boo = false;
+			var n = 0;
 			while (n < 50)
 			{
 				number = newNumber(number);

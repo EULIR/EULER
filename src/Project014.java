@@ -15,11 +15,11 @@ public class Project014
 
 	public static void main(String[] args)
 	{
-		int max = 0;
-		int ans = 0;
-		for (int i = 2; i <= 1000000; i++)
+		var max = 0;
+		var ans = 0;
+		for (var i = 2; i <= 1000000; i++)
 		{
-			int n = make(i, 0);
+			var n = make(i, 0);
 			if (n > max)
 			{
 				max = n;

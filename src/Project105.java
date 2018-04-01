@@ -110,14 +110,14 @@ public class Project105
 	private static boolean isValid(int[] set)
 	{
 		HashSet<Integer> sumsSeen = new HashSet<>();
-		int[] min = new int[set.length + 1];
-		int[] max = new int[set.length + 1];
+		var min = new int[set.length + 1];
+		var max = new int[set.length + 1];
 		Arrays.fill(min, Integer.MAX_VALUE);
-		for (int i = 0; i < (1 << set.length); i++)
+		for (var i = 0; i < (1 << set.length); i++)
 		{
-			int size = Integer.bitCount(i);
-			int sum = 0;
-			for (int j = 0; j < set.length; j++)
+			var size = Integer.bitCount(i);
+			var sum = 0;
+			for (var j = 0; j < set.length; j++)
 				if (((i >>> j) & 1) != 0)
 					sum += set[j];
 			if (!sumsSeen.add(sum))
@@ -125,7 +125,7 @@ public class Project105
 			min[size] = Math.min(sum, min[size]);
 			max[size] = Math.max(sum, max[size]);
 		}
-		for (int i = 0; i < set.length; i++)
+		for (var i = 0; i < set.length; i++)
 			if (max[i] >= min[i + 1])
 				return false;
 		return true;
@@ -133,10 +133,10 @@ public class Project105
 
 	public static void main(String[] args)
 	{
-		int ans = 0;
-		for (int[] set : INPUT)
+		var ans = 0;
+		for (var set : INPUT)
 			if (isValid(set))
-				for (int x : set)
+				for (var x : set)
 					ans += x;
 		System.out.println(ans);
 	}

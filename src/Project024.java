@@ -8,11 +8,11 @@ public class Project024
 
 	private static void calculate(String s1)
 	{
-		for (int i = 0; i <= 9; i++)
+		for (var i = 0; i <= 9; i++)
 			if (boo[i])
 			{
 				boo[i] = false;
-				String s2 = s1 + Integer.toString(i);
+				var s2 = s1 + Integer.toString(i);
 				if (s1.length() == 9)
 				{
 					k++;
@@ -24,9 +24,9 @@ public class Project024
 
 	public static void main(String[] args)
 	{
-		for (int i = 0; i < s.length; i++)
+		for (var i = 0; i < s.length; i++)
 			s[i] = "9999999999";
-		for (int i = 0; i < boo.length; i++)
+		for (var i = 0; i < boo.length; i++)
 			boo[i] = true;
 		calculate("");
 		Arrays.sort(s);

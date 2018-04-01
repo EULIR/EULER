@@ -4,7 +4,7 @@ public class Project045
 {
 	public static void main(String[] args)
 	{
-		for (int i = 1; i < MAX_VALUE; i++)
+		for (var i = 1; i < MAX_VALUE; i++)
 			if (Library.isHexagonal(i))
 				if (Library.isPentagonal(i))
 					if (Library.isTriangle(i))

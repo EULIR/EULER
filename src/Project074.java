@@ -6,11 +6,11 @@ public class Project074
 
 	private static int createNextNumber(int a)
 	{
-		String s = String.valueOf(a);
-		int ans = 0;
-		for (int i = 0; i < s.length(); i++)
+		var s = String.valueOf(a);
+		var ans = 0;
+		for (var i = 0; i < s.length(); i++)
 		{
-			String s1 = s.substring(i, i + 1);
+			var s1 = s.substring(i, i + 1);
 			ans += fac[Integer.parseInt(s1)];
 		}
 		return ans;
@@ -18,11 +18,11 @@ public class Project074
 
 	public static void main(String[] args)
 	{
-		int ans = 0;
-		for (int i = 1; i < 1000000; i++)
+		var ans = 0;
+		for (var i = 1; i < 1000000; i++)
 		{
 			ArrayList<Integer> list = new ArrayList<>();
-			int a = createNextNumber(i);
+			var a = createNextNumber(i);
 			while (!list.contains(a))
 			{
 				list.add(a);

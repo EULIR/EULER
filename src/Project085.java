@@ -7,13 +7,13 @@ public class Project085
 
 	public static void main(String[] args)
 	{
-		int area = 0;
-		int difference = Integer.MAX_VALUE;
-		for (int i = 1; i < Math.sqrt(2000000); i++)
-			for (int j = 1; j < Math.sqrt(2000000); j++)
+		var area = 0;
+		var difference = Integer.MAX_VALUE;
+		for (var i = 1; i < Math.sqrt(2000000); i++)
+			for (var j = 1; j < Math.sqrt(2000000); j++)
 			{
-				int t = countRectangle(i, j);
-				int k = Math.abs(t - 2000000);
+				var t = countRectangle(i, j);
+				var k = Math.abs(t - 2000000);
 				if (k < difference)
 				{
 					difference = k;

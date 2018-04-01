@@ -13,7 +13,7 @@ public class Project043
 			k++;
 			str[k] = s;
 		} else
-			for (int i = 0; i < boo.length; i++)
+			for (var i = 0; i < boo.length; i++)
 				if (boo[i])
 				{
 					boo[i] = false;
@@ -25,15 +25,15 @@ public class Project043
 
 	public static void main(String[] args)
 	{
-		for (int i = 0; i < boo.length; i++)
+		for (var i = 0; i < boo.length; i++)
 			boo[i] = true;
-		for (int i = 0; i < str.length; i++)
+		for (var i = 0; i < str.length; i++)
 		{
 			str[i] = "";
 		}
 		make("");
-		BigInteger ans = new BigInteger("0");
-		for (String s : str)
+		var ans = new BigInteger("0");
+		for (var s : str)
 			if (!s.equals(""))
 				if (Integer.parseInt(s.substring(1, 4)) % 2 == 0)
 					if (Integer.parseInt(s.substring(2, 5)) % 3 == 0)
@@ -43,7 +43,7 @@ public class Project043
 									if (Integer.parseInt(s.substring(6, 9)) % 13 == 0)
 										if (Integer.parseInt(s.substring(7, 10)) % 17 == 0)
 										{
-											BigInteger big = new BigInteger(s);
+											var big = new BigInteger(s);
 											ans = ans.add(big);
 											//System.out.println(s);
 										}

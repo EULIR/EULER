@@ -4,17 +4,17 @@ public class Project025
 {
 	public static void main(String[] args)
 	{
-		BigInteger first = new BigInteger("1");
-		BigInteger second = new BigInteger("1");
+		var first = new BigInteger("1");
+		var second = new BigInteger("1");
 		BigInteger third;
-		int k = 2;
+		var k = 2;
 		while (true)
 		{
 			third = first.add(second);
 			k++;
 			first = second;
 			second = third;
-			String s = third.toString();
+			var s = third.toString();
 			//System.out.println(s + " ");
 			if (s.length() == 1000)
 			{

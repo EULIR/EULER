@@ -2,8 +2,8 @@ public class Project047
 {
 	private static int primeNumber(int a)
 	{
-		int ans = 0;
-		for (int i = 2; i <= a; i++)
+		var ans = 0;
+		for (var i = 2; i <= a; i++)
 			if ((a % i == 0) && (Library.isPrime(i)))
 				ans++;
 		return ans;
@@ -11,7 +11,7 @@ public class Project047
 
 	public static void main(String[] args)
 	{
-		int n = 1000;
+		var n = 1000;
 		while (true)
 		{
 			n++;

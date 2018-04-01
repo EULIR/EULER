@@ -2,7 +2,7 @@ public class Project054
 {
 	private static int[] Card(String str)
 	{
-		int[] arr = new int[2];
+		var arr = new int[2];
 		arr[0] = "23456789TJQKA".indexOf(str.substring(0, 1));
 		arr[1] = "CSHD".indexOf(str.substring(1));
 		return arr;
@@ -10,11 +10,11 @@ public class Project054
 
 	private static void doubleSort(int[][] a)
 	{
-		for (int i = 0; i < a.length; i++)
-			for (int j = 0; j < a.length; j++)
+		for (var i = 0; i < a.length; i++)
+			for (var j = 0; j < a.length; j++)
 				if ((a[i][0] < a[j][0]) || ((a[i][0] == a[j][0]) && (a[i][1] < a[j][1])))
 				{
-					int[] temp = a[i];
+					var temp = a[i];
 					a[i] = a[j];
 					a[j] = temp;
 				}
@@ -27,7 +27,7 @@ public class Project054
 
 	private static boolean judgeTwoPairs(int[][] a)
 	{
-		int t = 0;
+		var t = 0;
 		if (a[0][0] == a[1][0])
 			t++;
 		if (a[1][0] == a[2][0])
@@ -69,12 +69,12 @@ public class Project054
 
 	private static boolean judgeStraightFlush(int[][] a)
 	{
-		int t = a[0][1];
-		for (int[] anA : a)
+		var t = a[0][1];
+		for (var anA : a)
 			if (anA[1] != t)
 				return false;
 		t = a[0][0];
-		for (int i = 0; i < a.length; i++)
+		for (var i = 0; i < a.length; i++)
 			if (a[i][0] != i + t)
 				return false;
 		return true;
@@ -82,11 +82,11 @@ public class Project054
 
 	private static boolean judgeRoyalFlush(int[][] a)
 	{
-		int t = a[0][1];
-		for (int[] anA : a)
+		var t = a[0][1];
+		for (var anA : a)
 			if (anA[1] != t)
 				return false;
-		for (int i = 0; i < a.length; i++)
+		for (var i = 0; i < a.length; i++)
 			if (a[i][0] != i + 8)
 				return false;
 		return true;
@@ -94,9 +94,9 @@ public class Project054
 
 	public static void main(String[] args)
 	{
-		String s = "8C TS KC 9H 4S 7D 2S 5D 3S AC";
-		int playerOneRank = 0;
-		int playerTwoRank = 0;
+		var s = "8C TS KC 9H 4S 7D 2S 5D 3S AC";
+		var playerOneRank = 0;
+		var playerTwoRank = 0;
 		int[][] playerOne = {Card(s.substring(0, 2)), Card(s.substring(3, 5)), Card(s.substring(6, 8)), Card(s.substring(9, 11)), Card(s.substring(12, 14))};
 		int[][] playerTwo = {Card(s.substring(15, 17)), Card(s.substring(18, 20)), Card(s.substring(21, 23)), Card(s.substring(24, 26)), Card(s.substring(27, 29))};
 		doubleSort(playerOne);

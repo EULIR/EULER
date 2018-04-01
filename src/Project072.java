@@ -18,7 +18,7 @@ public class Project072
 	public static void main(String[] args)
 	{
 		long ans = 0;
-		for (int i = 2; i <= 1000000; i++)
+		for (var i = 2; i <= 1000000; i++)
 			ans += euler(i);
 		System.out.println(ans);
 	}

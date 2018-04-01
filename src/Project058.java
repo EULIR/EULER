@@ -2,15 +2,15 @@ public class Project058
 {
 	public static void main(String[] args)
 	{
-		int primeNumber = 0;
-		int i = 1;
+		var primeNumber = 0;
+		var i = 1;
 		while (true)
 		{
 			i++;
-			int a = (2 * i - 1) * (2 * i - 1) - 6 * (i - 1);
-			int b = (2 * i - 1) * (2 * i - 1) - 4 * (i - 1);
-			int c = (2 * i - 1) * (2 * i - 1) - 2 * (i - 1);
-			int num = 4 * i - 3;
+			var a = (2 * i - 1) * (2 * i - 1) - 6 * (i - 1);
+			var b = (2 * i - 1) * (2 * i - 1) - 4 * (i - 1);
+			var c = (2 * i - 1) * (2 * i - 1) - 2 * (i - 1);
+			var num = 4 * i - 3;
 			if (Library.isPrime(a))
 				primeNumber++;
 			if (Library.isPrime(b))

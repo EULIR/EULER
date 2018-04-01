@@ -2,10 +2,10 @@ public class Project036
 {
 	private static String change(int a)
 	{
-		StringBuilder s = new StringBuilder();
+		var s = new StringBuilder();
 		while (a != 0)
 		{
-			int b = a % 2;
+			var b = a % 2;
 			s.insert(0, b);
 			a /= 2;
 		}
@@ -14,10 +14,10 @@ public class Project036
 
 	public static void main(String[] args)
 	{
-		int ans = 0;
-		for (int i = 1; i < 1000000; i++)
+		var ans = 0;
+		for (var i = 1; i < 1000000; i++)
 		{
-			String s = String.valueOf(i);
+			var s = String.valueOf(i);
 			if (Library.isReverse(s))
 				if (Library.isReverse(change(i)))
 					ans += i;

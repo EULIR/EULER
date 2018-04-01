@@ -2,20 +2,20 @@ public class Project076
 {
 	public static void main(String[] args)
 	{
-		int[] a1 = new int[101];
-		int[] a2 = new int[101];
-		final int a = 100;
-		for (int i = 0; i <= a; i++)
+		var a1 = new int[101];
+		var a2 = new int[101];
+		final var a = 100;
+		for (var i = 0; i <= a; i++)
 		{
 			a1[i] = 1;
 			a2[i] = 0;
 		}
-		for (int i = 2; i <= a; i++)
+		for (var i = 2; i <= a; i++)
 		{
-			for (int j = 0; j <= a; j++)
-				for (int k = 0; k + j <= a; k += i)
+			for (var j = 0; j <= a; j++)
+				for (var k = 0; k + j <= a; k += i)
 					a2[k + j] += a1[j];
-			for (int j = 0; j <= a; j++)
+			for (var j = 0; j <= a; j++)
 			{
 				a1[j] = a2[j];
 				a2[j] = 0;

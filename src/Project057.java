@@ -4,13 +4,13 @@ public class Project057
 {
 	public static void main(String[] args)
 	{
-		int ans = 0;
-		BigInteger numberOne = new BigInteger("3");
-		BigInteger numberTwo = new BigInteger("2");
-		for (int i = 0; i < 1000; i++)
+		var ans = 0;
+		var numberOne = new BigInteger("3");
+		var numberTwo = new BigInteger("2");
+		for (var i = 0; i < 1000; i++)
 		{
-			BigInteger substituteOne = numberOne;
-			BigInteger substituteTwo = numberTwo;
+			var substituteOne = numberOne;
+			var substituteTwo = numberTwo;
 			numberOne = substituteOne.add(substituteTwo).add(substituteTwo);
 			numberTwo = substituteOne.add(substituteTwo);
 			if (numberOne.toString().length() > numberTwo.toString().length())

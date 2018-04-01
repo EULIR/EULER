@@ -4,13 +4,13 @@ public class Project095
 {
 	public static void main(String[] args)
 	{
-		int[] arr = new int[1000001];
-		for (int i = 1; i <= 1000000; i++)
-			for (int j = i * 2; j <= 1000000; j += i)
+		var arr = new int[1000001];
+		for (var i = 1; i <= 1000000; i++)
+			for (var j = i * 2; j <= 1000000; j += i)
 				arr[j] += i;
-		int max = Integer.MIN_VALUE;
-		int element = 0;
-		for (int i = 0; i <= 1000000; i++)
+		var max = Integer.MIN_VALUE;
+		var element = 0;
+		for (var i = 0; i <= 1000000; i++)
 		{
 			ArrayList<Integer> list = new ArrayList<>();
 			for (int length = 1, nextInt = i; ; length++)

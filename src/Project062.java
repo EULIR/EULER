@@ -9,9 +9,9 @@ public class Project062
 		HashMap<Double, TreeSet<Long>> map = new HashMap<>();
 		for (long i = 0; ; i++)
 		{
-			long cube = i * i * i;
+			var cube = i * i * i;
 			Long entry = cube;
-			double digitCounter = 0.00D;
+			var digitCounter = 0.00D;
 			for (; cube > 0; cube /= 10)
 				digitCounter += Math.pow(10, cube % 10);
 			Double counter = digitCounter;

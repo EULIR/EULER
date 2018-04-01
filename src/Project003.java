@@ -2,7 +2,7 @@ public class Project003
 {
 	public static void main(String[] args)
 	{
-		long a = 600851475143l;
+		var a = 600851475143l;
 		long ans = 1;
 		long fac = 2;
 		while (a > 1)

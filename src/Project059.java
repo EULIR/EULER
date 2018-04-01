@@ -4,12 +4,12 @@ public class Project059
 {
 	private static int findMaxNumber(ArrayList a)
 	{
-		int[] arr = new int[101];
-		for (Object anA : a)
+		var arr = new int[101];
+		for (var anA : a)
 			arr[(int) anA]++;
-		int ans = 0;
-		int max = 0;
-		for (int i = 0; i < arr.length; i++)
+		var ans = 0;
+		var max = 0;
+		for (var i = 0; i < arr.length; i++)
 			if (arr[i] > max)
 			{
 				max = arr[i];
@@ -24,7 +24,7 @@ public class Project059
 		ArrayList<Integer> groupOne = new ArrayList<>();
 		ArrayList<Integer> groupTwo = new ArrayList<>();
 		ArrayList<Integer> groupThree = new ArrayList<>();
-		for (int i = 0; i < arr.length; i++)
+		for (var i = 0; i < arr.length; i++)
 		{
 			if (i % 3 == 0)
 				groupOne.add(arr[i]);
@@ -33,27 +33,27 @@ public class Project059
 			if (i % 3 == 2)
 				groupThree.add(arr[i]);
 		}
-		char keyOne = (char) (findMaxNumber(groupOne) ^ 32);
-		char keyTwo = (char) (findMaxNumber(groupTwo) ^ 32);
-		char keyThree = (char) (findMaxNumber(groupThree) ^ 32);
-		int ans = 0;
-		for (int i = 0; i < arr.length; i++)
+		var keyOne = (char) (findMaxNumber(groupOne) ^ 32);
+		var keyTwo = (char) (findMaxNumber(groupTwo) ^ 32);
+		var keyThree = (char) (findMaxNumber(groupThree) ^ 32);
+		var ans = 0;
+		for (var i = 0; i < arr.length; i++)
 		{
 			if (i % 3 == 0)
 			{
-				char c = (char) (arr[i] ^ keyOne);
+				var c = (char) (arr[i] ^ keyOne);
 				ans += (int) c;
 				System.out.print(c);
 			}
 			if (i % 3 == 1)
 			{
-				char c = (char) (arr[i] ^ keyTwo);
+				var c = (char) (arr[i] ^ keyTwo);
 				ans += (int) c;
 				System.out.print(c);
 			}
 			if (i % 3 == 2)
 			{
-				char c = (char) (arr[i] ^ keyThree);
+				var c = (char) (arr[i] ^ keyThree);
 				ans += (int) c;
 				System.out.print(c);
 			}

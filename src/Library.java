@@ -6,7 +6,7 @@ public class Library
 	{
 		if (a <= 1)
 			return false;
-		for (int i = 2; i * i <= a; i++)
+		for (var i = 2; i * i <= a; i++)
 			if (a % i == 0)
 				return false;
 		return true;
@@ -26,7 +26,7 @@ public class Library
 	{
 		if (a.compareTo(BigInteger.ONE) <= 0)
 			return false;
-		for (BigInteger i = new BigInteger("2"); i.multiply(i).compareTo(a) <= 0; i = i.add(BigInteger.ONE))
+		for (var i = new BigInteger("2"); i.multiply(i).compareTo(a) <= 0; i = i.add(BigInteger.ONE))
 			if (a.mod(i).equals(BigInteger.ZERO))
 				return false;
 		return true;
@@ -72,7 +72,7 @@ public class Library
 
 	public static boolean isReverse(int a)
 	{
-		String str = String.valueOf(a);
+		var str = String.valueOf(a);
 		return reverse(str).equals(str);
 	}
 
@@ -85,57 +85,57 @@ public class Library
 
 	public static boolean isPentagonal(long a)
 	{
-		long t = 24 * a + 1;
+		var t = 24 * a + 1;
 		return Math.sqrt(t) * Math.sqrt(t) == t && Math.sqrt(t) % 6 == 5;
 	}
 
 	public static boolean isHexagonal(long a)
 	{
-		long t = 8 * a + 1;
+		var t = 8 * a + 1;
 		return Math.sqrt(t) * Math.sqrt(t) == t && Math.sqrt(t) % 4 == 3;
 	}
 
 	public static boolean isTriangle(long a)
 	{
-		long t = a * 2;
+		var t = a * 2;
 		return Math.floor(Math.sqrt(t)) * (Math.floor(Math.sqrt(t)) + 1) / 2 == a;
 	}
 
 	public static boolean isOctagonal(long a)
 	{
-		long t = 3 * a + 1;
+		var t = 3 * a + 1;
 		return Math.sqrt(t) * Math.sqrt(t) == t && Math.sqrt(t) % 3 == 2;
 	}
 
 	public static boolean isHeptagonal(long a)
 	{
-		long t = 40 * a + 9;
+		var t = 40 * a + 9;
 		return Math.sqrt(t) * Math.sqrt(t) == t && Math.sqrt(t) % 10 == 7;
 	}
 
 	public static boolean isSquare(int a)
 	{
-		int b = (int) Math.sqrt(a);
+		var b = (int) Math.sqrt(a);
 		return b * b == a;
 	}
 
 	public static boolean isSquare(long a)
 	{
-		long b = (long) Math.sqrt(a);
+		var b = (long) Math.sqrt(a);
 		return b * b == a;
 	}
 
 	public static double log(double base, double value)
 	{
-		double lnb = Math.log(base);
-		double lnv = Math.log(value);
+		var lnb = Math.log(base);
+		var lnv = Math.log(value);
 		return lnv / lnb;
 	}
 
 	public static int power(int x, int y)
 	{
-		int k = x;
-		int ans = 1;
+		var k = x;
+		var ans = 1;
 		while (y > 0)
 		{
 			if (y % 2 == 1)
@@ -148,7 +148,7 @@ public class Library
 
 	public static long power(long x, long y)
 	{
-		long k = x;
+		var k = x;
 		long ans = 1;
 		while (y > 0)
 		{

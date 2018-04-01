@@ -7,17 +7,17 @@ public class Project069
 
 	public static void main(String[] args)
 	{
-		double max = 0.00D;
-		int maxIndex = 0;
-		for (int i = 2; i <= 1000000; i++)
+		var max = 0.00D;
+		var maxIndex = 0;
+		for (var i = 2; i <= 1000000; i++)
 		{
 			if (i % 1001 != 0)
 				continue;
-			int number = 0;
-			for (int j = 1; j <= i; j++)
+			var number = 0;
+			for (var j = 1; j <= i; j++)
 				if (relativelyPrime(i, j))
 					number++;
-			double d = (double) i / number;
+			var d = (double) i / number;
 			//System.out.println(number + " " + i);
 			if (d > max)
 			{
