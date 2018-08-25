@@ -8,8 +8,7 @@
 - See more on https://projecteuler.net/about
 
 ## About problem solving
-- All codes are written in Java, which require **JDK10** to compile and run(I have replace all potential tpye with "var").
-- I stick to solve at least one problem every day and update them here.
+- Most codes are written in Java while some of them are in C++, which require **JDK10** or gcc to compile and run(I have replace all potential type with "var").
 - Some of the solutions are not efficient enough to get the right answer in a second, therefore, if anybody have any advice or better algorithms, please email me : **runmingli_edu@163.com**
 
 ## Link
