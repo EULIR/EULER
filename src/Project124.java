@@ -12,10 +12,6 @@ public class Project124 {
 	}
 
 	public static boolean isLegal(ArrayList<Integer> prev, int a) {
-		for (int ele : prev) {
-			if (isPower(a, ele))
-				return false;
-		}
 		return true;
 	}
 
@@ -24,13 +20,9 @@ public class Project124 {
 		int i = 1;
 		int num = 1;
 		while (num < 10000) {
-			i++;
+
 			if (isLegal(prev, i)) {
-				num += (int) Library.log(i, 100000);
-				System.out.println(Library.log(i,100000));
-				System.out.println(i);
-				System.out.println();
-				prev.add(i);
+
 			}
 		}
 		System.out.println(num);
