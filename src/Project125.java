@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Project125 {
 	public static void main(String[] args) {
+		long time = System.currentTimeMillis();
 		double max = Math.sqrt(100000000);
 		long sum = 0;
 		ArrayList<Integer> list = new ArrayList<>();
@@ -18,5 +19,6 @@ public class Project125 {
 			}
 		}
 		System.out.println(sum);
+		System.out.println(System.currentTimeMillis() - time);
 	}
 }
