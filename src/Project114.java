@@ -1,7 +1,7 @@
 import java.math.BigInteger;
 
 public class Project114 {
-	public static BigInteger Combination(BigInteger m, BigInteger n) {
+	public static BigInteger combination(BigInteger m, BigInteger n) {
 		BigInteger ans = BigInteger.ONE;
 		BigInteger b = BigInteger.ONE;
 		if (m.compareTo(n.subtract(m)) > 0)
@@ -13,7 +13,6 @@ public class Project114 {
 				ans = ans.divide(b);
 				b = BigInteger.ONE;
 			}
-
 		}
 		return ans.divide(b);
 	}
