@@ -1,23 +1,19 @@
-import java.math.BigInteger;
-
 public class Project114 {
-	public static BigInteger combination(BigInteger m, BigInteger n) {
-		BigInteger ans = BigInteger.ONE;
-		BigInteger b = BigInteger.ONE;
-		if (m.compareTo(n.subtract(m)) > 0)
-			m = n.subtract(m);
-		for (BigInteger i = BigInteger.ONE; i.compareTo(m) <= 0; i = i.add(BigInteger.valueOf(1))) {
-			ans = ans.multiply(n.subtract(m).add(i));
-			b = b.multiply(i);
-			if (ans.mod(b).compareTo(BigInteger.ZERO) == 0) {
-				ans = ans.divide(b);
-				b = BigInteger.ONE;
-			}
-		}
-		return ans.divide(b);
+	public static long block(int a, int b, long[] buffer) {
+		long ans = 1;
+		if (b > a)
+			return ans;
+		if (buffer[a] != 0)
+			return buffer[a];
+		for (int i = 0; i <= a - b; i++)
+			for (int j = b; j <= a - i; j++)
+				ans += block(a - i - j - 1, b, buffer);
+		buffer[a] = ans;
+		return ans;
 	}
 
 	public static void main(String[] args) {
-
+		long[] buffer = new long[51];
+		System.out.println(block(50, 3, buffer));
 	}
 }
