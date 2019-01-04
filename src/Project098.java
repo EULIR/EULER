@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Project098 {
@@ -47,12 +48,81 @@ public class Project098 {
 			{"SURE", "USER"},
 			{"THROW", "WORTH"}};
 
-	public static void main(String[] args) {
 
+	public static void main(String[] args) {
+		ArrayList<ArrayList<String>> lists = new ArrayList<>();
+		for (int i = 0; i < 8; i++) {
+			lists.add(new ArrayList<>());
+		}
+		int a = 3;
+		while (a * a < 1000000000) {
+			a++;
+			long b = a * a;
+			String str = String.valueOf(b);
+			switch (str.length()) {
+				case 2:
+					lists.get(0).add(str);
+					break;
+				case 3:
+					lists.get(1).add(str);
+					break;
+				case 4:
+					lists.get(2).add(str);
+					break;
+				case 5:
+					lists.get(3).add(str);
+					break;
+				case 6:
+					lists.get(4).add(str);
+					break;
+				case 7:
+					lists.get(5).add(str);
+					break;
+				case 8:
+					lists.get(6).add(str);
+					break;
+				case 9:
+					lists.get(7).add(str);
+					break;
+			}
+		}
+		int max = Integer.MIN_VALUE;
+		for (String[] anagramWord : anagramWords) {
+			max = Library.max(check(anagramWord[0], anagramWord[1], lists.get(anagramWord[0].length() - 2)), max);
+		}
+		System.out.println(max);
 	}
 
-	public static int check(String s1, String s2) {
-		return 0;
+	public static int check(String s1, String s2, ArrayList<String> list) {
+		int max = Integer.MIN_VALUE;
+		for (String word : list) {
+			if (!isUnique(word))
+				continue;
+			int[] alphabet = new int[26];
+			for (int j = 0; j < s1.length(); j++) {
+				alphabet[s1.charAt(j) - 'A'] = word.charAt(j) - '0';
+			}
+			StringBuilder newNum = new StringBuilder();
+			for (int j = 0; j < s2.length(); j++) {
+				newNum.append(alphabet[s2.charAt(j) - 'A']);
+			}
+			int num = Integer.parseInt(newNum.toString());
+			if (String.valueOf(num).length() != s1.length() || !Library.isSquare(num))
+				continue;
+			max = Library.max(Library.max(max, num), Integer.parseInt(word));
+		}
+		return max;
+	}
+
+	public static boolean isUnique(String str) {
+		int check = 0;
+		for (int i = 0; i < str.length(); i++) {
+			int v = str.charAt(i) - '0';
+			if ((check & (1 << v)) > 0)
+				return false;
+			check |= (1 << v);
+		}
+		return true;
 	}
 }
 
