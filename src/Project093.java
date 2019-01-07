@@ -221,6 +221,18 @@ public class Project093 {
 //				}
 //			}
 //		}
+		for (int i = 0; i < arr.length; i++) {
+			for (int a1 = 0; a1 < 4; a1++) {
+				boolean[] train = new boolean[10000];
+				for (int a2 = 0; a2 < 4; a2++) {
+					for (int a3 = 0; a3 < 4; a3++) {
+						if (a1 == a2 || a2 == a3 || a1 == a3)
+							continue;
+						int[] newOrder = new int[]{arr[i][a1], arr[i][a2], arr[i][a3], arr[i][6 - a1 - a2 - a3]};
 
+					}
+				}
+			}
+		}
 	}
 }
