@@ -45,6 +45,7 @@ class Dart {
 		return this.dart[0].getScore() + this.dart[1].getScore() + this.dart[2].getScore();
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj == this)
 			return true;
@@ -58,6 +59,7 @@ class Dart {
 		return hash1 == hash2;
 	}
 
+	@Override
 	public int hashCode() {
 		return dart[0].hashCode() * dart[1].hashCode() + dart[2].hashCode();
 	}
@@ -78,6 +80,7 @@ class Throw {
 		return score;
 	}
 
+	@Override
 	public boolean equals(Object obj) {
 		if (obj == this)
 			return true;
@@ -87,6 +90,7 @@ class Throw {
 		return this.weight == aThrow.weight && this.value == aThrow.value;
 	}
 
+	@Override
 	public int hashCode() {
 		return Objects.hash(weight, value);
 	}
