@@ -18,7 +18,7 @@ public class Project121 {
 	 * 16!=total
 	 * */
 	public static void main(String[] args) {
-		int n = 29;
+		int n = 15;
 		long[] formula = {1L};
 		for (int i = 1; i <= n; i++) {
 			formula = polyMultiply(formula, new long[]{i, 1});
