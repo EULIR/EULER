@@ -135,4 +135,12 @@ public class Library {
 		}
 		return ans;
 	}
+
+	public static double power(double x, int y) {
+		double ans = 1.0D;
+		for (int i = 1; i <= y; i++) {
+			ans *= x;
+		}
+		return ans;
+	}
 }
