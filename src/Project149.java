@@ -23,28 +23,44 @@ public class Project149 {
 		}
 		BigInteger max = BigInteger.ZERO;
 		for (int i = 0; i < 2000; i++) {
-			int x = 1999;
-			int y = i;
-			BigInteger sum = BigInteger.ZERO;
-			while (y >= 0) {
-				sum = sum.add(matrix[x][y]);
-				y--;
-				x--;
+			BigInteger sum1 = BigInteger.ZERO;
+			BigInteger sum2 = BigInteger.ZERO;
+			for (int j = 0; j < 2000; j++) {
+				sum1 = sum1.add(matrix[i][j]);
+				sum2 = sum2.add(matrix[j][i]);
+				if (sum1.compareTo(max) > 0)
+					max = sum1;
+				if (sum1.compareTo(BigInteger.ZERO) < 0)
+					sum1 = BigInteger.ZERO;
+				if (sum2.compareTo(max) > 0)
+					max = sum2;
+				if (sum2.compareTo(BigInteger.ZERO) < 0)
+					sum2 = BigInteger.ZERO;
 			}
-			if (sum.compareTo(max) > 0)
-				max = sum;
 		}
-		for (int i = 1; i < 2000; i++) {
-			int x = 1999 - i;
-			int y = 1999;
+		for (int i = -2000; i <= 2000; i++) {
 			BigInteger sum = BigInteger.ZERO;
-			while (x >= 0) {
-				sum = sum.add(matrix[x][y]);
-				y--;
-				x--;
+			for (int j = 0; j < 2000; j++) {
+				if ((i + j) >= 0 && (i + j) < 2000) {
+					sum = sum.add(matrix[j][i + j]);
+					if (sum.compareTo(max) > 0)
+						max = sum;
+					if (sum.compareTo(BigInteger.ZERO) < 0)
+						sum = BigInteger.ZERO;
+				}
 			}
-			if (sum.compareTo(max) > 0)
-				max = sum;
+		}
+		for (int i = 0; i <= 4000; i++) {
+			BigInteger sum = BigInteger.ZERO;
+			for (int j = 0; j < 2000; j++) {
+				if (j - i >= 0) {
+					sum = sum.add(matrix[j][j - i]);
+					if (sum.compareTo(max) > 0)
+						max = sum;
+					if (sum.compareTo(BigInteger.ZERO) < 0)
+						sum = BigInteger.ZERO;
+				}
+			}
 		}
 		System.out.println(max);
 	}
