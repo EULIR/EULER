@@ -1,7 +1,9 @@
+import java.math.BigDecimal;
+
 public class Project183 {
 	public static void main(String[] args) {
 		long sum = 0;
-		for (int i = 5; i <= 100; i++) {
+		for (int i = 5; i <= 10000; i++) {
 			//System.out.println(M(i));
 			sum += M(i);
 		}
@@ -10,23 +12,19 @@ public class Project183 {
 
 	public static long M(int n) {
 		int k = (int) (n / Math.E);
-		double t1 = Math.pow((double) n / k, k);
+		BigDecimal t1 = BigDecimal.valueOf((double) n / k).pow(k);
 		int m = k + 1;
-		double t2 = Math.pow((double) n / m, m);
-		if (t1 > t2) {
-			int denominator = k / Library.gcd(n, k);
-			while (denominator % 2 == 0)
-				denominator /= 2;
-			while (denominator % 5 == 0)
-				denominator /= 5;
-			return denominator == 1 ? -n : n;
-		} else {
-			int denominator =  m / Library.gcd(n, m);
-			while (denominator % 2 == 0)
-				denominator /= 2;
-			while (denominator % 5 == 0)
-				denominator /= 5;
-			return denominator == 1 ? -n : n;
-		}
+		BigDecimal t2 = BigDecimal.valueOf((double) n / m).pow(m);
+		return t1.compareTo(t2) > 0 ? deno(n, k) : deno(n, m);
+
+	}
+
+	public static int deno(int n, int k) {
+		int denominator = k / Library.gcd(n, k);
+		while (denominator % 2 == 0)
+			denominator /= 2;
+		while (denominator % 5 == 0)
+			denominator /= 5;
+		return denominator == 1 ? -n : n;
 	}
 }
