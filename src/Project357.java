@@ -12,7 +12,7 @@ public class Project357 {
 				for (int j = i; j < MAX; j += i)
 					prime[j] = true;
 			}
-		long sum = primeList.stream().filter(aPrimeList -> aPrimeList % 4 != 1).filter(aPrimeList -> isValid(aPrimeList - 1)).mapToLong(aPrimeList -> aPrimeList - 1).sum();
+		long sum = primeList.stream().filter(a -> a % 4 != 1 && a % 4 != 2 && a % 4 != 0).filter(aPrimeList -> isValid(aPrimeList - 1)).mapToLong(aPrimeList -> aPrimeList - 1).sum();
 		System.out.println(sum);
 	}
 
