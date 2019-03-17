@@ -9,7 +9,7 @@
 
 ## About problem solving
 - Most codes are written in Java while some of them are in C++, which require **JDK10** or gcc to compile and run(I have replace all potential type with "var").
-- Some of the solutions are not efficient enough to get the right answer in a second, therefore, if anybody have any advice or better algorithms, please email me : **runmingli_edu@163.com**
+- Some of the solutions are not efficient enough to get the right answer in a second, therefore, pull requests are welcomed with better and faster algorithms.
 
 ## Link
 - [Project Euler](https://projecteuler.net/)
