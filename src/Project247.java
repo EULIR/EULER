@@ -14,7 +14,7 @@ public class Project247 {
 		for (int i = 1; stillToCheck > 0; i++) {
 			Square c = get();
 			if (c.left == n && c.below == n) max = i;
-			c.addNnext();
+			c.addNext();
 		}
 		return max;
 	}
@@ -58,7 +58,7 @@ public class Project247 {
 			return 0.5 * (d + Math.sqrt(d * d + 4));
 		}
 
-		public void addNnext() {
+		public void addNext() {
 			add(new Square(left + 1, below, xNext, y));
 			add(new Square(left, below + 1, x, 1 / xNext));
 
